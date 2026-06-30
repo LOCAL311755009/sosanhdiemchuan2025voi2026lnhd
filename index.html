@@ -23,12 +23,12 @@
     
     <!-- Header -->
     <header class="text-center mb-10">
-      <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Hệ Thống Phân Tích & So Sánh</span>
+      <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Hệ Thống Phân Tích & So Sánh Toàn Diện</span>
       <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-3 mb-2 tracking-tight">
         So Sánh Điểm Chuẩn Lớp 10
       </h1>
       <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
-        Đối chiếu biến động điểm số giữa niên khóa **2026-2027** và **2025-2026**
+        Đối chiếu biến động điểm số giữa niên khóa **2026-2027** và **2025-2026** (Đầy đủ 3 tỉnh thành)
       </p>
     </header>
 
@@ -40,7 +40,7 @@
       </div>
       <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
         <p class="text-xs text-gray-400 uppercase font-semibold">Tăng điểm NV1 mạnh nhất</p>
-        <p class="text-2xl font-black text-emerald-600 mt-1">+5.25 <span class="text-xs font-normal text-gray-400">điểm</span></p>
+        <p class="text-2xl font-black text-emerald-600 mt-1">+9.75 <span class="text-xs font-normal text-gray-400">điểm</span></p>
       </div>
       <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
         <p class="text-xs text-gray-400 uppercase font-semibold">Giảm điểm NV1 nhiều nhất</p>
@@ -91,10 +91,10 @@
 
       <!-- Region Filter Tabs -->
       <div class="border-t border-gray-100 pt-4 flex gap-2 overflow-x-auto">
-        <button onclick="setRegionFilter('all')" id="btn-reg-all" class="reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-indigo-50 text-indigo-700">Tất cả khu vực</button>
-        <button onclick="setRegionFilter('hcm')" id="btn-reg-hcm" class="reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-gray-50 text-gray-500 hover:bg-gray-100">TP. Hồ Chí Minh</button>
-        <button onclick="setRegionFilter('bd')" id="btn-reg-bd" class="reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-gray-50 text-gray-500 hover:bg-gray-100">Bình Dương (N/A 2025)</button>
-        <button onclick="setRegionFilter('brvt')" id="btn-reg-brvt" class="reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-gray-50 text-gray-500 hover:bg-gray-100">Bà Rịa - Vũng Tàu (N/A 2025)</button>
+        <button onclick="setRegionFilter('all')" id="btn-reg-all" class="reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-indigo-50 text-indigo-700 whitespace-nowrap">Tất cả khu vực</button>
+        <button onclick="setRegionFilter('hcm')" id="btn-reg-hcm" class="reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-gray-50 text-gray-500 hover:bg-gray-100 whitespace-nowrap">TP. Hồ Chí Minh</button>
+        <button onclick="setRegionFilter('bd')" id="btn-reg-bd" class="reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-gray-50 text-gray-500 hover:bg-gray-100 whitespace-nowrap">Bình Dương</button>
+        <button onclick="setRegionFilter('brvt')" id="btn-reg-brvt" class="reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-gray-50 text-gray-500 hover:bg-gray-100 whitespace-nowrap">Bà Rịa - Vũng Tàu</button>
       </div>
     </div>
 
@@ -127,7 +127,7 @@
   </div>
 
   <script>
-    // COMBINED DATASET (2026 vs 2025)
+    // FINALIZED COMPREHENSIVE DATASET (2026 vs 2025)
     const schoolsData = [
       // PAGE 1 (HCM)
       { code: "01FA01", name: "THPT Trưng Vương", ward: "Phường Sài Gòn", nv1_2026: 21.75, nv2_2026: 22, nv3_2026: 23, nv1_2025: 20.25, nv2_2025: 20.5, nv3_2025: 20.75 },
@@ -239,74 +239,74 @@
       { code: "22FA03", name: "THPT Dương Văn Dương", ward: "Xã Nhà Bè", nv1_2026: 13.25, nv2_2026: 13.75, nv3_2026: 14, nv1_2025: 10.5, nv2_2025: 10.5, nv3_2025: 10.5 },
       { code: "23FA01", name: "THPT Tây Thạnh", ward: "Phường Tây Thạnh", nv1_2026: 23.25, nv2_2026: 24.25, nv3_2026: 24.5, nv1_2025: 21.75, nv2_2025: 21.75, nv3_2025: 22.5 },
       { code: "23FA02", name: "THPT Lê Trọng Tấn", ward: "Phường Tân Sơn Nhì", nv1_2026: 21.75, nv2_2026: 22.5, nv3_2026: 22.75, nv1_2025: 18.5, nv2_2025: 19.25, nv3_2025: 20 },
-      { code: "23FA03", name: "THPT Thoại Ngọc Hầu", ward: "Phường Tân Phú", nv1_2026: 16.25, nv2_2026: 17.25, nv3_2026: 18.25, nv1_2025: null, nv2_2025: null, nv3_2025: null }, // Not listed in 2025 PDF Page 4
+      { code: "23FA03", name: "THPT Thoại Ngọc Hầu", ward: "Phường Tân Phú", nv1_2026: 16.25, nv2_2026: 17.25, nv3_2026: 18.25, nv1_2025: null, nv2_2025: null, nv3_2025: null }, 
       { code: "24FA01", name: "THPT Vĩnh Lộc", ward: "Phường Bình Tân", nv1_2026: 19, nv2_2026: 19.75, nv3_2026: 20.25, nv1_2025: 16.75, nv2_2025: 17.25, nv3_2025: 17.75 },
       { code: "24FA02", name: "THPT Nguyễn Hữu Cảnh", ward: "Phường Bình Trị Đông", nv1_2026: 21, nv2_2026: 21.75, nv3_2026: 22, nv1_2025: 18.25, nv2_2025: 19, nv3_2025: 20 },
       { code: "24FA03", name: "THPT Bình Hưng Hòa", ward: "Phường Bình Hưng Hòa", nv1_2026: 19.75, nv2_2026: 20.75, nv3_2026: 21, nv1_2025: 17.75, nv2_2025: 18.25, nv3_2025: 19 },
       { code: "24FA04", name: "THPT Bình Tân", ward: "Phường Bình Tân", nv1_2026: 16, nv2_2026: 16.75, nv3_2026: 17.5, nv1_2025: 14.25, nv2_2025: 14.25, nv3_2025: 14.5 },
-      { code: "24FA05", name: "THPT Hoàng Thế Thiện", ward: "Phường An Lạc", nv1_2026: 15.5, nv2_2026: 16.5, nv3_2026: 17.25, nv1_2025: 13, nv2_2025: 13.5, nv3_2025: 14 }, // Named THPT Bình Trị Đông B (THPT Hoàng Thế Thiện) in 2025
+      { code: "24FA05", name: "THPT Hoàng Thế Thiện", ward: "Phường An Lạc", nv1_2026: 15.5, nv2_2026: 16.5, nv3_2026: 17.25, nv1_2025: 13, nv2_2025: 13.5, nv3_2025: 14 }, 
       { code: "24HA01", name: "THPT An Lạc", ward: "Phường An Lạc", nv1_2026: 17.25, nv2_2026: 18, nv3_2026: 19, nv1_2025: 15.25, nv2_2025: 15.5, nv3_2025: 16 },
 
-      // PAGE 5 (BINH DUONG - NO 2025 DATA AVAILABLE IN THE DOCUMENT)
-      { code: "26FA01", name: "THPT Lý Thái Tổ", ward: "Phường An Phú", nv1_2026: 17.25, nv2_2026: 17.75, nv3_2026: 18, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA03", name: "THPT Lê Lợi", ward: "Xã Bắc Tân Uyên", nv1_2026: 13.25, nv2_2026: 14.25, nv3_2026: 15, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA04", name: "THPT Tân Bình Bình Dương", ward: "Phường Vĩnh Tân", nv1_2026: 13.5, nv2_2026: 14.25, nv3_2026: 15.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA05", name: "THPT Dĩ An", ward: "Phường Dĩ An", nv1_2026: 23.25, nv2_2026: 24, nv3_2026: 24.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA06", name: "THPT Võ Minh Đức", ward: "Phường Thủ Dầu Một", nv1_2026: 20, nv2_2026: 20, nv3_2026: 20.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA07", name: "THCS THPT Minh Hòa", ward: "Xã Minh Thạnh", nv1_2026: 10.75, nv2_2026: 10.75, nv3_2026: 11.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA08", name: "THPT Bình An", ward: "Phường Đông Hòa", nv1_2026: 19, nv2_2026: 19.5, nv3_2026: 20, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA10", name: "THPT Nguyễn Đình Chiểu", ward: "Phường Phú Lợi", nv1_2026: 16.75, nv2_2026: 17.75, nv3_2026: 18.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA11", name: "THPT Trịnh Hoài Đức", ward: "Phường Thuận An", nv1_2026: 23.25, nv2_2026: 24, nv3_2026: 24.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA12", name: "THPT Nguyễn Trãi - Bình Dương", ward: "Phường Lái Thiêu", nv1_2026: 19.75, nv2_2026: 20, nv3_2026: 20.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA13", name: "THPT Nguyễn An Ninh - Bình Dương", ward: "Phường Dĩ An", nv1_2026: 15.75, nv2_2026: 16.25, nv3_2026: 16.5, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA14", name: "THPT Huỳnh Văn Nghệ", ward: "Phường Tân Uyên", nv1_2026: 15, nv2_2026: 15.75, nv3_2026: 16.5, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA15", name: "THPT Phước Vĩnh", ward: "Xã Phú Giáo", nv1_2026: 11.5, nv2_2026: 12.25, nv3_2026: 13, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA16", name: "THPT Bến Cát", ward: "Phường Bến Cát", nv1_2026: 18.5, nv2_2026: 18.75, nv3_2026: 19, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA17", name: "THPT Dầu Tiếng", ward: "Xã Dầu Tiếng", nv1_2026: 12.5, nv2_2026: 13.25, nv3_2026: 13.5, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA18", name: "THPT Bình Phú - Bình Dương", ward: "Phường Chánh Hiệp", nv1_2026: 15.5, nv2_2026: 16.5, nv3_2026: 17, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA19", name: "THPT Trần Văn Ơn", ward: "Phường Thuận Giao", nv1_2026: 16.75, nv2_2026: 17.75, nv3_2026: 18.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA20", name: "THCS và THPT Tây Sơn", ward: "Xã An Long", nv1_2026: 10.25, nv2_2026: 10.5, nv3_2026: 10.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA21", name: "THCS và THPT Nguyễn Huệ", ward: "Xã Phước Thành", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA22", name: "THPT Tây Nam", ward: "Phường Phú An", nv1_2026: 14.5, nv2_2026: 15.5, nv3_2026: 15.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA23", name: "THPT Tân Phước Khánh", ward: "Phường Tân Khánh", nv1_2026: 19.25, nv2_2026: 19.5, nv3_2026: 19.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA24", name: "THPT Thái Hòa", ward: "Phường Tân Khánh", nv1_2026: 15.5, nv2_2026: 16.25, nv3_2026: 17.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA25", name: "THPT An Mỹ", ward: "Phường Bình Dương", nv1_2026: 18.5, nv2_2026: 18.75, nv3_2026: 19, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA26", name: "THPT Phước Hòa", ward: "Xã Phước Hòa", nv1_2026: 11.75, nv2_2026: 12.5, nv3_2026: 13.5, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA27", name: "THPT Bàu Bàng", ward: "Xã Bàu Bàng", nv1_2026: 15.25, nv2_2026: 15.75, nv3_2026: 16.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA28", name: "THPT Long Hòa", ward: "Xã Long Hòa", nv1_2026: 12, nv2_2026: 12.75, nv3_2026: 13.5, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA29", name: "THPT Nguyễn Thị Minh Khai - BD", ward: "Phường Tân Đông Hiệp", nv1_2026: 20.25, nv2_2026: 21.25, nv3_2026: 22.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "26FA30", name: "THPT Thường Tân", ward: "Xã Thường Tân", nv1_2026: 12, nv2_2026: 12.75, nv3_2026: 13.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
+      // PAGE 5 (BINH DUONG - POPULATED)
+      { code: "26FA01", name: "THPT Lý Thái Tổ", ward: "Phường An Phú", nv1_2026: 17.25, nv2_2026: 17.75, nv3_2026: 18, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA03", name: "THPT Lê Lợi", ward: "Xã Bắc Tân Uyên", nv1_2026: 13.25, nv2_2026: 14.25, nv3_2026: 15, nv1_2025: 10.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA04", name: "THPT Tân Bình Bình Dương", ward: "Phường Vĩnh Tân", nv1_2026: 13.5, nv2_2026: 14.25, nv3_2026: 15.25, nv1_2025: 10.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA05", name: "THPT Dĩ An", ward: "Phường Dĩ An", nv1_2026: 23.25, nv2_2026: 24, nv3_2026: 24.25, nv1_2025: 14.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA06", name: "THPT Võ Minh Đức", ward: "Phường Thủ Dầu Một", nv1_2026: 20, nv2_2026: 20, nv3_2026: 20.75, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA07", name: "THCS THPT Minh Hòa", ward: "Xã Minh Thạnh", nv1_2026: 10.75, nv2_2026: 10.75, nv3_2026: 11.25, nv1_2025: 11.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA08", name: "THPT Bình An", ward: "Phường Đông Hòa", nv1_2026: 19, nv2_2026: 19.5, nv3_2026: 20, nv1_2025: 14.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA10", name: "THPT Nguyễn Đình Chiểu", ward: "Phường Phú Lợi", nv1_2026: 16.75, nv2_2026: 17.75, nv3_2026: 18.25, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA11", name: "THPT Trịnh Hoài Đức", ward: "Phường Thuận An", nv1_2026: 23.25, nv2_2026: 24, nv3_2026: 24.25, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA12", name: "THPT Nguyễn Trãi - Bình Dương", ward: "Phường Lái Thiêu", nv1_2026: 19.75, nv2_2026: 20, nv3_2026: 20.75, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA13", name: "THPT Nguyễn An Ninh - Bình Dương", ward: "Phường Dĩ An", nv1_2026: 15.75, nv2_2026: 16.25, nv3_2026: 16.5, nv1_2025: 14.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA14", name: "THPT Huỳnh Văn Nghệ", ward: "Phường Tân Uyên", nv1_2026: 15, nv2_2026: 15.75, nv3_2026: 16.5, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA15", name: "THPT Phước Vĩnh", ward: "Xã Phú Giáo", nv1_2026: 11.5, nv2_2026: 12.25, nv3_2026: 13, nv1_2025: 10.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA16", name: "THPT Bến Cát", ward: "Phường Bến Cát", nv1_2026: 18.5, nv2_2026: 18.75, nv3_2026: 19, nv1_2025: 14.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA17", name: "THPT Dầu Tiếng", ward: "Xã Dầu Tiếng", nv1_2026: 12.5, nv2_2026: 13.25, nv3_2026: 13.5, nv1_2025: 11.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA18", name: "THPT Bình Phú - Bình Dương", ward: "Phường Chánh Hiệp", nv1_2026: 15.5, nv2_2026: 16.5, nv3_2026: 17, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA19", name: "THPT Trần Văn Ơn", ward: "Phường Thuận Giao", nv1_2026: 16.75, nv2_2026: 17.75, nv3_2026: 18.25, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA20", name: "THCS và THPT Tây Sơn", ward: "Xã An Long", nv1_2026: 10.25, nv2_2026: 10.5, nv3_2026: 10.75, nv1_2025: 10.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA21", name: "THCS và THPT Nguyễn Huệ", ward: "Xã Phước Thành", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: 10.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA22", name: "THPT Tây Nam", ward: "Phường Phú An", nv1_2026: 14.5, nv2_2026: 15.5, nv3_2026: 15.75, nv1_2025: 14.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA23", name: "THPT Tân Phước Khánh", ward: "Phường Tân Khánh", nv1_2026: 19.25, nv2_2026: 19.5, nv3_2026: 19.75, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA24", name: "THPT Thái Hòa", ward: "Phường Tân Khánh", nv1_2026: 15.5, nv2_2026: 16.25, nv3_2026: 17.25, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA25", name: "THPT An Mỹ", ward: "Phường Bình Dương", nv1_2026: 18.5, nv2_2026: 18.75, nv3_2026: 19, nv1_2025: 13.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA26", name: "THPT Phước Hòa", ward: "Xã Phước Hòa", nv1_2026: 11.75, nv2_2026: 12.5, nv3_2026: 13.5, nv1_2025: 10.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA27", name: "THPT Bàu Bàng", ward: "Xã Bàu Bàng", nv1_2026: 15.25, nv2_2026: 15.75, nv3_2026: 16.25, nv1_2025: 12.50, nv2_2025: null, nv3_2025: null },
+      { code: "26FA28", name: "THPT Long Hòa", ward: "Xã Long Hòa", nv1_2026: 12, nv2_2026: 12.75, nv3_2026: 13.5, nv1_2025: 11.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA29", name: "THPT Nguyễn Thị Minh Khai - BD", ward: "Phường Tân Đông Hiệp", nv1_2026: 20.25, nv2_2026: 21.25, nv3_2026: 22.25, nv1_2025: 14.00, nv2_2025: null, nv3_2025: null },
+      { code: "26FA30", name: "THPT Thường Tân", ward: "Xã Thường Tân", nv1_2026: 12, nv2_2026: 12.75, nv3_2026: 13.75, nv1_2025: 10.00, nv2_2025: null, nv3_2025: null },
 
       // PAGE 6 (BINH DUONG / BARIA VUNG TAU)
-      { code: "26FA31", name: "THPT Thanh Tuyền", ward: "Phường Tây Nam", nv1_2026: 13.5, nv2_2026: 14, nv3_2026: 14.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
+      { code: "26FA31", name: "THPT Thanh Tuyền", ward: "Phường Tây Nam", nv1_2026: 13.5, nv2_2026: 14, nv3_2026: 14.75, nv1_2025: 11.00, nv2_2025: null, nv3_2025: null },
       { code: "26FA32", name: "THPT Hà Huy Tập", ward: "Phường Dĩ An", nv1_2026: 16.5, nv2_2026: 17, nv3_2026: 17.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA02", name: "THPT Vũng Tàu", ward: "Phường Tam Thắng", nv1_2026: 21.75, nv2_2026: 22, nv3_2026: 22.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA03", name: "THPT Châu Thành", ward: "Phường Bà Rịa", nv1_2026: 18.5, nv2_2026: 19, nv3_2026: 19.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA04", name: "THPT Trần Phú - BRVT", ward: "Xã Kim Long", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA05", name: "THPT Xuyên Mộc", ward: "Xã Hồ Tràm", nv1_2026: 12.25, nv2_2026: 12.5, nv3_2026: 12.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA06", name: "THPT Phú Mỹ", ward: "Phường Phú Mỹ", nv1_2026: 11.5, nv2_2026: 11.75, nv3_2026: 12, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA07", name: "THPT Trần Hưng Đạo - BRVT", ward: "Phường Tân Hải", nv1_2026: 11.5, nv2_2026: 11.75, nv3_2026: 12, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA08", name: "THPT Hắc Dịch", ward: "Phường Tân Thành", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA09", name: "THPT Trần Văn Quan", ward: "Xã Long Điền", nv1_2026: 10.75, nv2_2026: 11, nv3_2026: 11.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA10", name: "THPT Võ Thị Sáu - BRVT", ward: "Xã Đất Đỏ", nv1_2026: 11, nv2_2026: 11.25, nv3_2026: 11.5, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA11", name: "THPT Hòa Hội", ward: "Xã Hòa Hội", nv1_2026: 10.25, nv2_2026: 10.25, nv3_2026: 10.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA12", name: "THPT Nguyễn Bỉnh Khiêm", ward: "Phường Tam Long", nv1_2026: 10.25, nv2_2026: 10.25, nv3_2026: 10.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA13", name: "THPT Nguyễn Trãi - BRVT", ward: "Xã Ngãi Giao", nv1_2026: 10, nv2_2026: 10, nv3_2026: 10, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA14", name: "THPT Phước Bửu", ward: "Xã Hồ Tràm", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA15", name: "THPT Long Hải - Phước Tỉnh", ward: "Xã Long Hải", nv1_2026: 10.5, nv2_2026: 10.75, nv3_2026: 10.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA16", name: "THPT Nguyễn Văn Cừ - BRVT", ward: "Xã Xuân Sơn", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA17", name: "THPT Minh Đạm", ward: "Xã Long Hải", nv1_2026: 11.5, nv2_2026: 11.75, nv3_2026: 12, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA18", name: "THPT Nguyễn Khuyến - BRVT", ward: "Phường Phước Thắng", nv1_2026: 15.75, nv2_2026: 16, nv3_2026: 16.5, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA19", name: "THPT Nguyễn Huệ - BRVT", ward: "Phường Rạch Dừa", nv1_2026: 19.25, nv2_2026: 19.5, nv3_2026: 19.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA20", name: "THPT Đinh Tiên Hoàng", ward: "Phường Vũng Tàu", nv1_2026: 17.25, nv2_2026: 17.25, nv3_2026: 17.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA21", name: "THPT Trần Nguyên Hãn", ward: "Phường Tam Thắng", nv1_2026: 16.5, nv2_2026: 17.25, nv3_2026: 17.5, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA22", name: "THPT Ngô Quyền - BRVT", ward: "Xã Nghĩa Thành", nv1_2026: 10, nv2_2026: 10, nv3_2026: 10, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA23", name: "THPT Hòa Bình", ward: "Xã Hòa Hội", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA25", name: "THPT Trần Quang Khải - BRVT", ward: "Xã Long Hải", nv1_2026: 12.75, nv2_2026: 13, nv3_2026: 13.25, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA26", name: "THPT Dương Bạch Mai", ward: "Xã Phước Hải", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA27", name: "THPT Bà Rịa", ward: "Phường Bà Rịa", nv1_2026: 14, nv2_2026: 14.5, nv3_2026: 14.75, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA28", name: "THPT Bưng Riềng", ward: "Xã Xuyên Mộc", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: null, nv2_2025: null, nv3_2025: null },
-      { code: "27FA30", name: "THPT Nguyễn Du - BRVT", ward: "Xã Ngãi Giao", nv1_2026: 15.25, nv2_2026: 15.75, nv3_2026: 16, nv1_2025: null, nv2_2025: null, nv3_2025: null },
+      { code: "27FA02", name: "THPT Vũng Tàu", ward: "Phường Tam Thắng", nv1_2026: 21.75, nv2_2026: 22, nv3_2026: 22.25, nv1_2025: 21.25, nv2_2025: null, nv3_2025: null },
+      { code: "27FA03", name: "THPT Châu Thành", ward: "Phường Bà Rịa", nv1_2026: 18.5, nv2_2026: 19, nv3_2026: 19.25, nv1_2025: 9.00, nv2_2025: 10.00, nv3_2025: null },
+      { code: "27FA04", name: "THPT Trần Phú - BRVT", ward: "Xã Kim Long", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: 7.50, nv2_2025: 8.00, nv3_2025: null },
+      { code: "27FA05", name: "THPT Xuyên Mộc", ward: "Xã Hồ Tràm", nv1_2026: 12.25, nv2_2026: 12.5, nv3_2026: 12.75, nv1_2025: 15.50, nv2_2025: null, nv3_2025: null },
+      { code: "27FA06", name: "THPT Phú Mỹ", ward: "Phường Phú Mỹ", nv1_2026: 11.5, nv2_2026: 11.75, nv3_2026: 12, nv1_2025: 6.50, nv2_2025: 7.75, nv3_2025: null },
+      { code: "27FA07", name: "THPT Trần Hưng Đạo - BRVT", ward: "Phường Tân Hải", nv1_2026: 11.5, nv2_2026: 11.75, nv3_2026: 12, nv1_2025: 10.50, nv2_2025: null, nv3_2025: null },
+      { code: "27FA08", name: "THPT Hắc Dịch", ward: "Phường Tân Thành", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: 10.00, nv2_2025: 10.50, nv3_2025: null },
+      { code: "27FA09", name: "THPT Trần Văn Quan", ward: "Xã Long Điền", nv1_2026: 10.75, nv2_2026: 11, nv3_2026: 11.25, nv1_2025: 5.00, nv2_2025: 6.75, nv3_2025: null },
+      { code: "27FA10", name: "THPT Võ Thị Sáu - BRVT", ward: "Xã Đất Đỏ", nv1_2026: 11, nv2_2026: 11.25, nv3_2026: 11.5, nv1_2025: 11.75, nv2_2025: null, nv3_2025: null },
+      { code: "27FA11", name: "THPT Hòa Hội", ward: "Xã Hòa Hội", nv1_2026: 10.25, nv2_2026: 10.25, nv3_2026: 10.25, nv1_2025: 10.25, nv2_2025: null, nv3_2025: null },
+      { code: "27FA12", name: "THPT Nguyễn Bỉnh Khiêm", ward: "Phường Tam Long", nv1_2026: 10.25, nv2_2026: 10.25, nv3_2026: 10.25, nv1_2025: 11.00, nv2_2025: 12.25, nv3_2025: null },
+      { code: "27FA13", name: "THPT Nguyễn Trãi - BRVT", ward: "Xã Ngãi Giao", nv1_2026: 10, nv2_2026: 10, nv3_2026: 10, nv1_2025: 9.25, nv2_2025: null, nv3_2025: null },
+      { code: "27FA14", name: "THPT Phước Bửu", ward: "Xã Hồ Tràm", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: 9.50, nv2_2025: 9.75, nv3_2025: null },
+      { code: "27FA15", name: "THPT Long Hải - Phước Tỉnh", ward: "Xã Long Hải", nv1_2026: 10.5, nv2_2026: 10.75, nv3_2026: 10.75, nv1_2025: 12.50, nv2_2025: null, nv3_2025: null },
+      { code: "27FA16", name: "THPT Nguyễn Văn Cừ - BRVT", ward: "Xã Xuân Sơn", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: 8.25, nv2_2025: 9.00, nv3_2025: null },
+      { code: "27FA17", name: "THPT Minh Đạm", ward: "Xã Long Hải", nv1_2026: 11.5, nv2_2026: 11.75, nv3_2026: 12, nv1_2025: 14.00, nv2_2025: null, nv3_2025: null },
+      { code: "27FA18", name: "THPT Nguyễn Khuyến - BRVT", ward: "Phường Phước Thắng", nv1_2026: 15.75, nv2_2026: 16, nv3_2026: 16.5, nv1_2025: 17.25, nv2_2025: null, nv3_2025: null },
+      { code: "27FA19", name: "THPT Nguyễn Huệ - BRVT", ward: "Phường Rạch Dừa", nv1_2026: 19.25, nv2_2026: 19.5, nv3_2026: 19.75, nv1_2025: 19.00, nv2_2025: null, nv3_2025: null },
+      { code: "27FA20", name: "THPT Đinh Tiên Hoàng", ward: "Phường Vũng Tàu", nv1_2026: 17.25, nv2_2026: 17.25, nv3_2026: 17.75, nv1_2025: 15.00, nv2_2025: 15.25, nv3_2025: null },
+      { code: "27FA21", name: "THPT Trần Nguyên Hãn", ward: "Phường Tam Thắng", nv1_2026: 16.5, nv2_2026: 17.25, nv3_2026: 17.5, nv1_2025: 16.00, nv2_2025: 16.25, nv3_2025: null },
+      { code: "27FA22", name: "THPT Ngô Quyền - BRVT", ward: "Xã Nghĩa Thành", nv1_2026: 10, nv2_2026: 10, nv3_2026: 10, nv1_2025: 5.25, nv2_2025: 6.75, nv3_2025: null },
+      { code: "27FA23", name: "THPT Hòa Bình", ward: "Xã Hòa Hội", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: 9.00, nv2_2025: null, nv3_2025: null },
+      { code: "27FA25", name: "THPT Trần Quang Khải - BRVT", ward: "Xã Long Hải", nv1_2026: 12.75, nv2_2026: 13, nv3_2026: 13.25, nv1_2025: 9.50, nv2_2025: 10.50, nv3_2025: null },
+      { code: "27FA26", name: "THPT Dương Bạch Mai", ward: "Xã Phước Hải", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: 8.50, nv2_2025: 9.00, nv3_2025: null },
+      { code: "27FA27", name: "THPT Bà Rịa", ward: "Phường Bà Rịa", nv1_2026: 14, nv2_2026: 14.5, nv3_2026: 14.75, nv1_2025: 14.25, nv2_2025: null, nv3_2025: null },
+      { code: "27FA28", name: "THPT Bưng Riềng", ward: "Xã Xuyên Mộc", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: 9.25, nv2_2025: 10.00, nv3_2025: null },
+      { code: "27FA30", name: "THPT Nguyễn Du - BRVT", ward: "Xã Ngãi Giao", nv1_2026: 15.25, nv2_2026: 15.75, nv3_2026: 16, nv1_2025: 11.50, nv2_2025: null, nv3_2025: null },
 
       // PAGE 7 (BRVT)
       { code: "27FA33", name: "THPT Võ Nguyên Giáp", ward: "Phường Phú Mỹ", nv1_2026: 9, nv2_2026: 9, nv3_2026: 9, nv1_2025: null, nv2_2025: null, nv3_2025: null }
@@ -341,9 +341,9 @@
     function setRegionFilter(region) {
       activeRegion = region;
       document.querySelectorAll('.reg-btn').forEach(btn => {
-        btn.className = "reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-gray-50 text-gray-500 hover:bg-gray-100";
+        btn.className = "reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-gray-50 text-gray-500 hover:bg-gray-100 whitespace-nowrap";
       });
-      document.getElementById(`btn-reg-${region}`).className = "reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-indigo-50 text-indigo-700";
+      document.getElementById(`btn-reg-${region}`).className = "reg-btn px-3 py-1.5 text-xs font-semibold rounded-md bg-indigo-50 text-indigo-700 whitespace-nowrap";
       visibleCount = itemsPerPage;
       renderSchools();
     }
@@ -389,7 +389,7 @@
 
         // 2. Trend Filters
         if (school.nv1_2025 === null) {
-          return activeTrend === 'all'; // Hide trends if no 2025 benchmark exists
+          return activeTrend === 'all'; 
         }
         
         const delta = school.nv1_2026 - school.nv1_2025;
@@ -425,26 +425,24 @@
         card.className = "bg-white p-5 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all flex flex-col justify-between";
         
         // Calculate Deltas
-        const has2025 = school.nv1_2025 !== null;
-        let deltaNV1 = "";
-        let deltaNV2 = "";
-        let deltaNV3 = "";
+        const has2025_nv1 = school.nv1_2025 !== null;
+        const has2025_nv2 = school.nv2_2025 !== null;
+        const has2025_nv3 = school.nv3_2025 !== null;
+
+        let deltaNV1 = "—";
+        let deltaNV2 = "—";
+        let deltaNV3 = "—";
         let cardIndicator = "";
 
-        if (has2025) {
+        const getFormat = (val) => {
+          if (val > 0) return `<span class="text-xs font-bold text-emerald-600">(+${val.toFixed(2)})</span>`;
+          if (val < 0) return `<span class="text-xs font-bold text-rose-500">(${val.toFixed(2)})</span>`;
+          return `<span class="text-xs font-bold text-gray-400">(0.00)</span>`;
+        };
+
+        if (has2025_nv1) {
           const d1 = school.nv1_2026 - school.nv1_2025;
-          const d2 = school.nv2_2026 - school.nv2_2025;
-          const d3 = school.nv3_2026 - school.nv3_2025;
-
-          const getFormat = (val) => {
-            if (val > 0) return `<span class="text-xs font-bold text-emerald-600">(+${val.toFixed(2)})</span>`;
-            if (val < 0) return `<span class="text-xs font-bold text-rose-500">(${val.toFixed(2)})</span>`;
-            return `<span class="text-xs font-bold text-gray-400">(0.00)</span>`;
-          };
-
           deltaNV1 = getFormat(d1);
-          deltaNV2 = getFormat(d2);
-          deltaNV3 = getFormat(d3);
 
           if (d1 > 0) {
             cardIndicator = `<span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full">Tăng điểm 📈</span>`;
@@ -455,6 +453,16 @@
           }
         } else {
           cardIndicator = `<span class="bg-amber-50 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full">N/A 2025</span>`;
+        }
+
+        if (has2025_nv2) {
+          const d2 = school.nv2_2026 - school.nv2_2025;
+          deltaNV2 = getFormat(d2);
+        }
+
+        if (has2025_nv3) {
+          const d3 = school.nv3_2026 - school.nv3_2025;
+          deltaNV3 = getFormat(d3);
         }
 
         card.innerHTML = `
@@ -480,24 +488,24 @@
             <div class="grid grid-cols-4 text-center items-center py-1 border-b border-gray-50 text-xs">
               <div class="text-left font-bold text-blue-600">NV 1</div>
               <div class="font-extrabold text-gray-800">${school.nv1_2026}</div>
-              <div class="text-gray-500">${has2025 ? school.nv1_2025 : '—'}</div>
-              <div>${has2025 ? deltaNV1 : '—'}</div>
+              <div class="text-gray-500">${has2025_nv1 ? school.nv1_2025 : '—'}</div>
+              <div>${has2025_nv1 ? deltaNV1 : '—'}</div>
             </div>
 
             <!-- NV2 Rows -->
             <div class="grid grid-cols-4 text-center items-center py-1 border-b border-gray-50 text-xs">
               <div class="text-left font-bold text-indigo-600">NV 2</div>
               <div class="font-extrabold text-gray-800">${school.nv2_2026}</div>
-              <div class="text-gray-500">${has2025 ? school.nv2_2025 : '—'}</div>
-              <div>${has2025 ? deltaNV2 : '—'}</div>
+              <div class="text-gray-500">${has2025_nv2 ? school.nv2_2025 : '—'}</div>
+              <div>${has2025_nv2 ? deltaNV2 : '—'}</div>
             </div>
 
             <!-- NV3 Rows -->
             <div class="grid grid-cols-4 text-center items-center py-1 text-xs">
               <div class="text-left font-bold text-purple-600">NV 3</div>
               <div class="font-extrabold text-gray-800">${school.nv3_2026}</div>
-              <div class="text-gray-500">${has2025 ? school.nv3_2025 : '—'}</div>
-              <div>${has2025 ? deltaNV3 : '—'}</div>
+              <div class="text-gray-500">${has2025_nv3 ? school.nv3_2025 : '—'}</div>
+              <div>${has2025_nv3 ? deltaNV3 : '—'}</div>
             </div>
           </div>
         `;
